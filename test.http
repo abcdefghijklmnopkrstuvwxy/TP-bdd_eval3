@@ -1,0 +1,79 @@
+### PROJECTS
+
+###
+# Créer un projet
+POST http://localhost:3000/api/projects
+Content-Type: application/json
+
+{
+  "name": "Mon projet",
+  "description": "Projet initial"
+}
+
+###
+# Lister tous les projets
+GET http://localhost:3000/api/projects
+
+###
+# Récupérer un projet par id (remplacer {id})
+GET http://localhost:3000/api/projects/6752c95134bbe78b51db9d32
+
+###
+# Mettre à jour un projet (remplacer {id})
+PUT http://localhost:3000/api/projects/6752c95e34bbe78b51db9d34
+Content-Type: application/json
+
+{
+  "status": "in-progress"
+}
+
+###
+# Marquer un projet comme complété (remplacer {id})
+PUT http://localhost:3000/api/projects/6752d5dd647d6b41049d2e89/complete
+
+###
+# Supprimer un projet (remplacer {id})
+DELETE http://localhost:3000/api/projects/6752fc340406818954dfd971
+
+
+### TASKS
+
+###
+# Créer une tâche (remplacer {projectId})
+POST http://localhost:3000/api/tasks
+Content-Type: application/json
+
+{
+  "projectId": "6752cb8a005eed316c963a86",
+  "title": "Ma dernière tâche"
+}
+
+###
+# Lister toutes les tâches
+GET http://localhost:3000/api/tasks
+
+###
+# Lister toutes les tâches (filtrer par projet) 
+GET http://localhost:3000/api/tasks?projectId=6752cb8a005eed316c963a86
+
+
+###
+# Récupérer une tâche par id (remplacer {id})
+GET http://localhost:3000/api/tasks/6752fe6fa2224373e064fc9a
+
+###
+# Mettre à jour une tâche (remplacer {id})
+PUT http://localhost:3000/api/tasks/6752fe6fa2224373e064fc9a
+Content-Type: application/json
+
+{
+  "title": "Tâche mise à jour"
+}
+
+###
+# Marquer une tâche comme faite (remplacer {id}) 
+PUT http://localhost:3000/api/tasks/6752fe6fa2224373e064fc9a/mark-done
+
+###
+# Supprimer une tâche (remplacer {id})
+DELETE http://localhost:3000/api/tasks/6752ce261a8a5cd739a5ecf6
